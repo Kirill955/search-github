@@ -3,17 +3,27 @@ import React, { useState } from 'react';
 // Style
 import './Form.scss';
 
+// Components
+import WindowWarning from '../auxiliary-things//WindowWarning';
+
 // Actions
 import { fetchRepos } from '../../redux/actions';
 import { connect } from 'react-redux';
 
 export const Form = ({ fetchRepos }) => {
   const [ reposName, setReposName ] = useState('');
+  const [ blankForm, setBlankForm ] = useState(false);
 
   const handelForm = (event) => {
     event.preventDefault();
-    fetchRepos(reposName)
-    setReposName('');
+    if ( !reposName.trim() ) {
+      setBlankForm(true);
+      setTimeout(() => setBlankForm(false), 3000);
+      setReposName('');
+    } else {
+      fetchRepos(reposName);
+      setReposName('');
+    }
   };
 
   return (
@@ -38,6 +48,7 @@ export const Form = ({ fetchRepos }) => {
         </div>
         </div>
       </form>
+      { blankForm && <WindowWarning text="Вeдите корректное значение" /> }
     </div>
   );
 };
