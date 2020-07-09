@@ -5,6 +5,7 @@ import './Form.scss';
 
 // Components
 import WindowWarning from '../auxiliary-things//WindowWarning';
+import { Buttons } from '../Buttons/Buttons';
 
 // Actions
 import { fetchRepos } from '../../redux/actions';
@@ -42,9 +43,7 @@ export const Form = ({ fetchRepos }) => {
             <span className="helper-text" data-error="wrong" data-success="right">Введите название реппозитория</span>
           </div>
           <div className="input-field col s12">
-            <button className="btn waves-effect waves-light" type="submit" name="action">search
-              <i className="material-icons right">search</i>
-            </button>
+            <Buttons.Submit text="search" img="search" />
         </div>
         </div>
       </form>
