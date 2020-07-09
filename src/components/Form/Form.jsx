@@ -1,21 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Style
 import './Form.scss';
 
+// Actions
+import { fetchRepos } from '../../redux/actions';
+import { connect } from 'react-redux';
 
-export const Form = () => {
+export const Form = ({ fetchRepos }) => {
+  const [ reposName, setReposName ] = useState('');
 
-  const handelForm = event => {
+  const handelForm = (event) => {
     event.preventDefault();
-    console.log(event.target.value)
+    fetchRepos(reposName)
+    setReposName('');
   };
+
   return (
     <div className="row">
-      <form className="col s12" onChange={handelForm} >
+      <form className="col s12" onSubmit={handelForm} >
         <div className="row">
           <div className="input-field col s12">
-            <input id="repos" type="text" className="validate" placeholder="Repositories" />
+            <input 
+              id="reposName" 
+              type="text" 
+              className="validate" 
+              placeholder="Repositories" 
+              value={reposName} 
+              onChange={event => setReposName(event.target.value)} 
+            />
             <span className="helper-text" data-error="wrong" data-success="right">Введите название реппозитория</span>
           </div>
           <div className="input-field col s12">
@@ -28,3 +41,11 @@ export const Form = () => {
     </div>
   );
 };
+
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = {
+  fetchRepos
+}
+
+export const connector = connect(mapStateToProps, mapDispatchToProps);

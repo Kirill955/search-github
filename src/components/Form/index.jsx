@@ -1,3 +1,3 @@
-import { Form } from './Form';
+import { Form, connector } from './Form';
 
-export default Form;
+export default connector(Form);

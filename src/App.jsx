@@ -6,6 +6,7 @@ import './App.scss';
 // Components
 import Header from './components/Header';
 import Form from './components/Form';
+import CardWrapper from './components/CardsWrapper';
 import Footer from './components/Footer';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       <Header />
       <Form />
+      <CardWrapper repositories={[1,2,3,4,5,6]} />
       <Footer />
     </div>
   );
