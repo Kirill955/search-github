@@ -22,7 +22,7 @@ export const CardItem = ({ repos }) => {
         { repos.homepage 
           && 
           <div className="card-action">
-            <a href={repos.homepage} target="_blank" rel="noopener noreferrer" >Открыть домашнюю страницу приложения</a> 
+            <a href={repos.homepage} target="_blank" rel="noopener noreferrer" >Открыть приложениe</a> 
           </div>
         }
       </div>
