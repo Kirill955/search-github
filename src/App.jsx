@@ -26,7 +26,6 @@ function App({ fonLoadingRepos }) {
         <CardWrapper />
       </main>
       <Footer />
-      <button onClick={() => fonLoadingRepos()}>CLick me</button>
     </div>
   );
 }
