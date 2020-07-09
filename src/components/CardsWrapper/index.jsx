@@ -1,3 +1,3 @@
-import { CardsWrapper } from './CardsWrapper';
+import { CardsWrapper, connector } from './CardsWrapper';
 
-export default CardsWrapper;
+export default connector(CardsWrapper);
