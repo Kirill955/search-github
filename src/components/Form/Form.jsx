@@ -11,7 +11,7 @@ import { Buttons } from '../Buttons/Buttons';
 import { fetchRepos } from '../../redux/actions';
 import { connect } from 'react-redux';
 
-export const Form = ({ fetchRepos }) => {
+export const Form = ({ fetchRepos, loading }) => {
   const [ reposName, setReposName ] = useState('');
   const [ blankForm, setBlankForm ] = useState(false);
 
@@ -43,7 +43,7 @@ export const Form = ({ fetchRepos }) => {
             <span className="helper-text" data-error="wrong" data-success="right">Введите название реппозитория</span>
           </div>
           <div className="input-field col s12">
-            <Buttons.Submit text="search" img="search" />
+            <Buttons.Submit text="search" img="search" disable={loading ? true : false} />
         </div>
         </div>
       </form>
@@ -52,7 +52,9 @@ export const Form = ({ fetchRepos }) => {
   );
 };
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  loading: state.loading
+});
 
 const mapDispatchToProps = {
   fetchRepos
