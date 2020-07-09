@@ -11,7 +11,7 @@ import CardItem from '../CardItem';
 
 export const CardsWrapper = ({ repositories }) => {
   return (
-    <div>
+    <div className='row' > 
       { repositories.map(repos => <CardItem repos={repos} key={repos.id} />) } 
     </div>
   )
