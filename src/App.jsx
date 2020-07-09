@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Style
 import './App.scss';
@@ -9,15 +9,30 @@ import Form from './components/Form';
 import CardWrapper from './components/CardsWrapper';
 import Footer from './components/Footer';
 
-function App() {
+// Redux
+import { fonLoadingRepos } from './redux/actions';
+import { connect } from 'react-redux';
+
+function App({ fonLoadingRepos }) {
+
+  // Фоновая загрузка реппозиториев
+  useState(() => fonLoadingRepos(), []);
+
   return (
     <div className="App">
       <Header />
-      <Form />
-      <CardWrapper repositories={[1,2,3,4,5,6]} />
+      <main>
+        <Form />
+        <CardWrapper />
+      </main>
       <Footer />
+      <button onClick={() => fonLoadingRepos()}>CLick me</button>
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = {
+  fonLoadingRepos
+};
+
+export default connect(null, mapDispatchToProps)(App);

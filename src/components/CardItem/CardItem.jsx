@@ -7,7 +7,6 @@ import './CardItem.scss';
 export const CardItem = ({ repos }) => {
   return (
     <div className="col s12 m7">
-      { console.log(repos) }
       <div className="card">
         <div className="card-image">
           <img src={repos.owner.avatar_url} alt={repos.owner.login} />

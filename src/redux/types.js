@@ -1,1 +1,2 @@
+export const FON_LOADING_REPOS = 'FON_LOADING_REPOS'; 
 export const FETCH_REPOS = 'FETCH_REPOS';
