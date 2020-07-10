@@ -6,8 +6,8 @@ import './CardItem.scss';
 
 export const CardItem = ({ repos }) => {
   return (
-    <div className="col l3 s6 hoverable" style={{height: '800px'}}>
-      <div className="card" style={{height: '95%'}}>
+    <div className="col xl3 l4 s12 hoverable card-item">
+      <div className="card">
         <div className="card-image">
           <img src={repos.owner.avatar_url} alt={repos.owner.login} />
           <span className="card-title">{ repos.name }</span>

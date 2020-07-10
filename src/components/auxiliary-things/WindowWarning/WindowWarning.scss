@@ -11,3 +11,8 @@
   text-transform: uppercase;
 }
 
+@media(max-width: 767px) {
+  .window-warning {
+    width: 80%;
+  }
+}; 

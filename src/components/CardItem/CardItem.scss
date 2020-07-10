@@ -1,0 +1,13 @@
+.card-item {
+  height: 800px;
+}
+
+.card {
+  height: 95%;
+}
+
+@media(max-width: 992px) {
+  .card-item {
+    height: auto;
+  }
+}
